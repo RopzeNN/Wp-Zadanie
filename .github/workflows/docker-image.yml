@@ -15,7 +15,7 @@ jobs:
     - name: Building container
       run: docker run --name dockercontainer dockerimage
     - name: Coping program.exe
-      run: docker cp dockercontainer:/praktyki-wp-2023-Makhintosh/dist/program.exe ${PWD}
+      run: docker cp dockercontainer:/Wp-Zadanie/dist/program.exe ${PWD}
 
     - name: Create Github release
       id: create-new-release
