@@ -1,7 +1,7 @@
 Działanie programu: 
 
-Po wpisaniu do programu interesującego nas produktu, program wyszukuje pierwszy wynik jaki może znaleźć. Jeżeli program nie będzie mógł znaleźć oceny, ceny lub nazwy zastąpi go napisem:
-Brak (cena, ocena, tytuł). Program przyjmuje spacje i zamienia je na + aby url mógł je odczytać.
+Jest to prosty program napisany w języku Python, który umożliwia wyszukiwanie informacji o produktach na stronie Amazon za pomocą zapytania. Program wykorzystuje biblioteki Pythona, takie jak requests i BeautifulSoup, do pobierania i przetwarzania danych. Po wpisaniu do programu interesującego nas produktu, program wyszukuje pierwszy wynik jaki może znaleźć. Jeżeli program nie będzie mógł znaleźć oceny, ceny lub nazwy zastąpi go napisem:
+Brak (cena, ocena, tytuł). Program przyjmuje spacje i zamienia je na + aby url mógł je odczytać. Program działa wyłącznie dla strony amazon.
 
 # Praktyki w WP 2023
 
