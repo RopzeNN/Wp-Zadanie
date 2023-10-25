@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_product_info(query, attempt=0):
-    if attempt >= 5:
+    if attempt >= 3:
         print("Nie udało się znaleźć produktu. Proszę podać inną nazwę.")
         return "Brak nazwy", "Brak oceny", "Brak ceny"
     ans = query.replace(" ", "+")
