@@ -11,7 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Docker file image
-      run: docker build --pull --rm -f "Dockerfile" -t dockerimage "."
+      run: |
+        docker build --pull --rm -f "Dockerfile" -t dockerimage "."
+        python.exe -m pip install --upgrade pip
     - name: Building container
       run: docker run --name dockercontainer dockerimage
     - name: Coping program.exe
