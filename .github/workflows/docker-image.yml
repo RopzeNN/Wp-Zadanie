@@ -15,7 +15,7 @@ jobs:
     - name: Building container
       run: docker run --name dockercontainer dockerimage
     - name: Copying program.exe
-      run: docker cp dockercontainer:/Wp-Zadanie/dist/program.exe ${{ github.workspace }}
+      run: docker cp dockercontainer:/Wp-Zadanie/dist/program.exe ${PWD}
 
     - name: Create Github release
       id: create-new-release
