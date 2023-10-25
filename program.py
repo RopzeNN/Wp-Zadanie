@@ -2,8 +2,10 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-
-def get_product_info(query):
+def get_product_info(query, attempt=0):
+    if attempt >= 5:
+        print("Nie udało się znaleźć produktu. Proszę podać inną nazwę.")
+        return "Brak nazwy", "Brak oceny", "Brak ceny"
     ans = query.replace(" ", "+")
     url = f'https://www.amazon.pl/s?k={ans}'
     try:
@@ -15,8 +17,7 @@ def get_product_info(query):
             rating = rating_element[0].text
         else:
             rating = "Brak oceny"
-        name_element = item.select(
-            'h2.a-size-mini.a-spacing-none.a-color-base.s-line-clamp-4')
+        name_element = item.select('h2.a-size-mini.a-spacing-none.a-color-base.s-line-clamp-4')
         if name_element:
             name = name_element[0].text
         else:
@@ -30,8 +31,7 @@ def get_product_info(query):
     except:
         print("Ponowna próba znalezienia produktu")
         time.sleep(5)
-        return get_product_info(query)
-
+        return get_product_info(query, attempt + 1)
 
 def main():
     query = input("Podaj nazwę produktu: ")
@@ -41,6 +41,5 @@ def main():
     print('Ocena produktu:', rating)
 
     input("Press Enter to continue...")
-
 
 main()
